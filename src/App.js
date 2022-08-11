@@ -10,7 +10,7 @@ const App = ()=>{
     {
       id:2,
       title:"Take a shower",
-      text:"Take a shower, bush and clean your hair."
+      text:"Take a shower, brush and clean your hair."
     },
     {
       id:3,
@@ -23,6 +23,7 @@ const App = ()=>{
   })
   return (
     <div>
+      <h1>TaskBar</h1>
       {mappedData}
     </div>
   )
