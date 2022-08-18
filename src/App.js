@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Bar from './components/Bar'
 const App = ()=>{
-  const data = [
+  const [data, setData] = useState([
     {
       id:1,
       title:"Wake up",
@@ -17,9 +17,14 @@ const App = ()=>{
       title:"Cook breakfast",
       text:"Cook some good light food for yourself."
     },
-  ];
+  ]);
+  const handle = (ID)=>{
+    setData((items)=>{
+      return items.filter((item)=> item.id !== ID)
+    })
+  }
   const mappedData = data.map((item)=>{
-      return (  <Bar key={item.id} title={item.title} text={item.text}  /> )
+      return (  <Bar uniqe={item.id} title={item.title} text={item.text} handleClick={handle} key={item.id}  /> )
   })
   return (
     <div>
