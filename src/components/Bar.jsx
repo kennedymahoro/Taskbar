@@ -5,11 +5,11 @@ const Bar = (props) =>{
   return (
     <div className='content'>
       <div className='texts'>
-        <span>{props.key}</span>
+        <span>{props.uniqe}</span>
         <span>{props.title}</span>
         <span>{props.text}</span>
       </div>
-      <button>delete</button>
+      <button onClick={()=>{props.handleClick(props.uniqe)}}>delete</button>
     </div>
   )
 }
